@@ -1,0 +1,28 @@
+## VS code extenstion
+Vetur by Pine Wu
+Vue 2 Snippets by hollowtree
+
+## terminal
+//create package.json
+npm i init
+
+//depedencies
+npm i express cors body-parser mongodb
+
+//dev dependencies
+npm i -D nodemon
+
+## package.json
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+}
+
+## folder
+create folder named server
+
+
+## run server
+npm run dev
