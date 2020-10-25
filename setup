@@ -26,3 +26,15 @@ create folder named server
 
 ## run server
 npm run dev
+
+##setup Vue
+npm i -g @vue/cli
+
+## create folder
+vue create client
+
+## run vue
+npm run serve
+
+## fetch
+npm i axios
