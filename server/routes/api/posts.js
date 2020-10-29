@@ -28,9 +28,10 @@ router.delete('/:id', async (req, res)=> {
 })
 
 async function loadPostsCollection(){
-    const client = await mongodb.MongoClient.connect('mongodb+srv://user764:GpKPTj7hjgZp27qw@cluster0.t5wb4.mongodb.net/vue?retryWrites=true&w=majority', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
+    // const client = await mongodb.MongoClient.connect('mongodb+srv://user764:GpKPTj7hjgZp27qw@cluster0.t5wb4.mongodb.net/vue?retryWrites=true&w=majority', {
+    const client = await mongodb.MongoClient.connect('http://localhost:5000/api/posts/', {
+        useNewUrlParser: true
+        // useUnifiedTopology: true
     })
     return client.db('vue_express').collection('posts')
 

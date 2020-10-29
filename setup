@@ -23,7 +23,6 @@ npm i -D nodemon
 ## folder
 create folder named server
 
-
 ## run server
 npm run dev
 
