@@ -3,14 +3,11 @@ const mongodb = require('mongodb')
 
 const router = express.Router()
 
-//get post
 router.get('/', async (req, res)=> {
-    // res.send('hello')
     const posts = await loadPostsCollection()
     res.send(await posts.find({}).toArray() )
 })
 
-//add post
 router.post('/', async (req, res)=> {
     const posts = await loadPostsCollection()
     await posts.insertOne({
@@ -20,7 +17,6 @@ router.post('/', async (req, res)=> {
     res.status(201).send()
 })
 
-//delete post
 router.delete('/:id', async (req, res)=> {
     const posts = await loadPostsCollection()
     await posts.deleteOne({_id: new mongodb.ObjectID(req.params.id)})
@@ -28,13 +24,12 @@ router.delete('/:id', async (req, res)=> {
 })
 
 async function loadPostsCollection(){
-    // const client = await mongodb.MongoClient.connect('mongodb+srv://user764:GpKPTj7hjgZp27qw@cluster0.t5wb4.mongodb.net/vue?retryWrites=true&w=majority', {
-    const client = await mongodb.MongoClient.connect('http://localhost:5000/api/posts/', {
-        useNewUrlParser: true
-        // useUnifiedTopology: true
-    })
-    return client.db('vue_express').collection('posts')
+    const client = await mongodb.MongoClient.connect(
+        'mongodb+srv://godfrey:a371fq2rlT9okG7j@cluster0.t5wb4.mongodb.net/vue?retryWrites=true&w=majority',
+        { useNewUrlParser: true}
+    )
 
+    return client.db('vue').collection('posts')
 }
 
 module.exports = router
