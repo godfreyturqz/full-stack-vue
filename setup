@@ -12,14 +12,6 @@ npm i express cors body-parser mongodb
 //dev dependencies
 npm i -D nodemon
 
-## package.json
-{
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-
-}
-
 ## folder
 create folder named server
 
